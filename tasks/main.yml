@@ -1,0 +1,14 @@
+---
+- name: Debug message
+  debug:
+    msg: "We need more bryndza"
+  tags:
+    - debug
+
+- name: Create file on target system
+  copy:
+    dest: "/tmp/bryndza_{{ '%Y%m%d-%H%M' | strftime }}"
+    content: "bryndza: prepared for serving."
+    mode: '0644'
+  tags:
+    - file
